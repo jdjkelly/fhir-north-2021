@@ -4,7 +4,7 @@
 
 ## Agenda
 
-* [Why TypeScript?]()
+* [Why TypeScript?](#Why-Typescript?)
 * [How to read TypeScript]()
 * [How to use @types/fhir]()
 * [Building a type-safe UI with FHIR and React]()
@@ -48,28 +48,22 @@ interface Patient {
 
 ## How to use @types/fhir
 
-FHIR community members interested in using FHIR and JavaScript came together to create TypeScript definitions automatically from the FHIR JSON Schema release.
+FHIR community members interested in using FHIR and JavaScript came together to create TypeScript definitions automatically from the FHIR JSON Schema release. 
 
 You might not know this, but every release of FHIR ships with a JSON Schema that fully describes all of the Resources in the standard. We use that JSON Schema file to generate code for us in whatever languages we need. So far, fhir-codegen ships C# and TypeScript code. It reads the JSON Schema into an Abstract Syntax Tree, and then we print out the appropriate syntax for the TypeScript output.
 
 ### Installing
 
-Really there are 3 steps:
+There are just 2 steps:
 
-1. You need a TypeScript project
-2. You need to install the npm package
+1. Install TypeScript and @types/fhir in a new project
+2. Adding a TypeScript config file
 
 `@TODO add full working env link here`
 
 ```
-npm init
-npx typescript init
-npm install --save-dev @types/fhir
-```
-Lastly, we need to change tsconfig.json and add `FHIR` to types:
-
-```json
-   "types": ["fhir"]
+npm i typescript @types/fhir --save-dev
+npx tsc --init
 ```
 
 ### Usage basics
@@ -77,6 +71,8 @@ Lastly, we need to change tsconfig.json and add `FHIR` to types:
 #### Annotating a variable
 
 ```typescript
+import { Patient } from "fhir/r4"
+
 const patient: Patient = {
   resourceType: "Patient",
   id: "1234-123-1234-123"
@@ -84,6 +80,14 @@ const patient: Patient = {
 ```
 
 #### Namespace support
+
+In tsconfig.json add:
+
+```json
+   "types": ["fhir"]
+```
+
+Now, we have access to fhir2, fhir3, and fhir4 as global scoped types available to us everywhere (including in the following examples).
 
 #### Use with a function
 
