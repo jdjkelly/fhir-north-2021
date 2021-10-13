@@ -59,7 +59,7 @@ There are just 2 steps:
 1. Install TypeScript and @types/fhir in a new project
 2. Adding a TypeScript config file
 
-`@TODO add full working env link here`
+You can also clone this template: https://github.com/jdjkelly/fhir-typescript-template
 
 ```
 npm i typescript @types/fhir --save-dev
