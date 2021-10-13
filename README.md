@@ -1,5 +1,9 @@
 ## FHIR North 2021
 
+* Presented in pre-recorded format on Wed Oct 13, 2021.
+* [Slides available for download](https://github.com/jdjkelly/fhir-north-2021/files/7340389/SESAI3UWFHQW036EU_Building.on.FHIR.in.TypeScript.pdf)
+
+
 # Building on FHIR with TypeScript
 
 ## Agenda
